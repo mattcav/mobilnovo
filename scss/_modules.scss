@@ -24,3 +24,14 @@
     $base-style: true
   );
 }
+
+
+.marchi__list {
+    @include block-grid(
+    $per-row: 2
+  );
+}
+
+.marchi__title {
+    @extend .evidenza__title;
+}
