@@ -1,3 +1,9 @@
+// vars
+@import "fonts";
+@import "colors";
+@import "mixin";
+
+// Foundation stuff
 @import "settings";
 @import "foundation";
 
@@ -38,3 +44,10 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+// SMACSS
+@import "base";
+@import "layout";
+@import "modules";
+@import "status";
+@import "theme";
