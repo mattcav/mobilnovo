@@ -63,7 +63,10 @@ module.exports = function(grunt) {
       concat: {
         files: 'js/*.js',
         tasks: ['concat', 'uglify']
-      }
+      },
+      options: {
+          livereload: true,
+        }
     }
   });
 
