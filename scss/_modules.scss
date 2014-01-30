@@ -252,14 +252,14 @@
     width:100%;
     text-align:center;
     top:50%;
-    margin-top:-0.5em;
+    margin-top:-1.75em;
     font-family: "adelle", serif;
     font-weight:400;
     text-shadow: 0 5px 5px rgba($black, 0.1),
                 5px 0px 5px rgba($black, 0.5),
                 -10px 1px 5px rgba($black, 0.05);
     font-size:rem-calc(18);    
-    line-height: 1; 
+    line-height: 1.2; 
     @media #{$medium-up} {
         font-size:rem-calc(27);
     } 
