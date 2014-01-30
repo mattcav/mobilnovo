@@ -1,3 +1,6 @@
 small {
     font-family:"adelle-sans", sans-serif;
 }
+a, input, button {
+    -ms-touch-action: none !important;
+}
