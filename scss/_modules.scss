@@ -79,7 +79,9 @@
 
     @media #{$medium-up} {
         float:right;
-
+    }
+    @media #{$large-up} {
+            margin: 3rem 0 2.5rem;
     }
 }
 
@@ -88,17 +90,40 @@
     @extend %section;
     padding:1rem;
     background-color:$grey;
+    @media #{$medium-up} {
+        padding:3rem 1rem 2rem;
+    }
+    @media #{$large-up} {
+        padding:4rem 1rem 2rem;
+    }
+}
+.footer__header {
+    @include grid-column(
+    $columns:12
+    );
+}
+.footer__title {
+    color:$white;
 }
 .blurb {
+    max-width:29rem;
+    color:$white;
     @include grid-column(
     $columns:12
     );
     @media #{$medium-up} {
-    @include grid-column(
-    $columns:6
-    );
+        @include grid-column(
+        $columns:6
+        );
     }
 }
+.blurb__text, .newsletter__text {
+    font-size:0.8em;
+    @media #{$large-up} {
+        font-size:0.9rem;
+    }
+}
+
 .negozi {
     @include grid-column(
     $columns:12
@@ -108,9 +133,66 @@
         $columns:6
         );  
     }
+    @media #{$large-up} {
+      @include grid-column(
+        $columns:5,
+        $float:right
+        );  
+    }
 }
 .negozi__list {
     @include block-grid(
-    $per-row: 2
+    $per-row: 2,
+    // This controls how much space is between each item in the block grid.
+    // Use a variable or any pixel or em values.
+    $spacing: 2em
     );
+}
+
+.newsletter {
+    color:$white;
+    margin-bottom:2rem;
+    max-width:23rem;
+    @include grid-column(
+        $columns:12,
+        $collapse:true
+        ); 
+    @media #{$large-up} {
+      max-width:26rem;  
+    }
+}
+.newsletter__title {
+    color:$white;
+    font-size:rem-calc(23);
+}
+.newsletter__input {
+    @include grid-column(
+        $columns:10,
+        $collapse:true
+        ); 
+}
+.newsletter__button {
+    @include grid-column(
+        $columns:2,
+        $collapse:true
+        ); 
+}
+
+.contentinfo {
+    @extend %section;
+    background:$red;
+    color:$white;
+    padding:.5em;
+}
+.contentinfo__inner {
+    @include grid-column(
+        $columns:12
+        );
+}
+.contentinfo__link {
+    color:$white;
+    text-decoration: underline;
+    &:hover, &:active {
+        color:$white;
+    }
 }

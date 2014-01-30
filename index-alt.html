@@ -20,15 +20,14 @@
             </a>
           </section>
           <section class="tab-bar__title right tab-bar-section">
-            <img src="images/mobilnovo/mobilnovo.svg" alt="mobilnovo">
+            <img class="tab-bar__logo" src="images/mobilnovo/mobilnovo.svg" alt="mobilnovo">
           </section>
         </nav>
 
         <!-- Off Canvas Menu -->
         <aside class="left-off-canvas-menu"> 
           <ul class="off-canvas-list"> 
-            <li><label>MOBILNOVO</label></li> 
-            <li><a href="#">Cos'è</a></li> 
+            <li><a href="#">Profilo</a></li> 
             <li><a href="#">Collezioni</a></li> 
             <li><a href="#">Brand</a></li> 
             <li><a href="#">Contatti</a></li> 
@@ -38,128 +37,152 @@
         <main role="main" id="main">
           
           <section id="copertina" class="copertina">
-            <img class="copertina__img" src="images/copertina/copertina5.jpg" alt="Copertina">
+            <img class="copertina__img" data-interchange="[images/copertina/copertina5_small.jpg, (default)], [images/copertina/copertina5_medium.jpg, (medium)], , [images/copertina/copertina5_large.jpg, (large)]" alt="copertina"> 
+            <noscript><img src="images/copertina/copertina5.jpg" alt="copertina"></noscript>
           </section>
 
           <section id="evidenza" class="evidenza">
-            <h2 class="evidenza__title">In evidenza</h2>
-            <ul class="evidenza__list">
-              <li class="evidenza__item">
-                <a href="#" class="evidenza__link">
-                  <img src="images/evidenza/evidenza1.jpg" alt="img in evidenza" class="evidenza__img">
-                </a>
-              </li>
-              <li class="evidenza__item">
-                <a href="#" class="evidenza__link">
-                  <img src="images/evidenza/evidenza2.jpg" alt="img in evidenza" class="evidenza__img">
-                </a>
-              </li>
-              <li class="evidenza__item">
-                <a href="#" class="evidenza__link">
-                  <img src="images/evidenza/evidenza3.jpg" alt="img in evidenza" class="evidenza__img">
-                </a>
-              </li>
-              <li class="evidenza__item">
-                <a href="#" class="evidenza__link">
-                  <img src="images/evidenza/evidenza4.jpg" alt="img in evidenza" class="evidenza__img">
-                </a>
-              </li>
-              <li class="evidenza__item">
-                <a href="#" class="evidenza__link">
-                  <img src="images/evidenza/evidenza7.jpg" alt="img in evidenza" class="evidenza__img">
-                </a>
-              </li>
-              <li class="evidenza__item">
-                <a href="#" class="evidenza__link">
-                  <img src="images/evidenza/evidenza9.jpg" alt="img in evidenza" class="evidenza__img">
-                </a>
-              </li>
-              <li class="evidenza__item">
-                <a href="#" class="evidenza__link">
-                  <img src="images/evidenza/evidenza8.jpg" alt="img in evidenza" class="evidenza__img">
-                </a>
-              </li>
-              <li class="evidenza__item">
-                <a href="#" class="evidenza__link">
-                  <img src="images/evidenza/evidenza5.jpg" alt="img in evidenza" class="evidenza__img">
-                </a>
-              </li>
-              <li class="evidenza__item">
-                <a href="#" class="evidenza__link">
-                  <img src="images/evidenza/evidenza10.jpg" alt="img in evidenza" class="evidenza__img">
-                </a>
-              </li>
-            </ul>
+            <div class="row">
+              <h2 class="evidenza__title">In evidenza</h2>
+              <ul class="evidenza__list_three">
+                <li class="evidenza__item">
+                  <a href="#" class="evidenza__link">
+                    <img src="images/evidenza/evidenza1.jpg" alt="img in evidenza" class="evidenza__img">
+                  </a>
+                </li>
+                <li class="evidenza__item">
+                  <a href="#" class="evidenza__link">
+                    <img src="images/evidenza/evidenza2.jpg" alt="img in evidenza" class="evidenza__img">
+                  </a>
+                </li>
+                <li class="evidenza__item">
+                  <a href="#" class="evidenza__link">
+                    <img src="images/evidenza/evidenza3.jpg" alt="img in evidenza" class="evidenza__img">
+                  </a>
+                </li>
+                <li class="evidenza__item">
+                  <a href="#" class="evidenza__link">
+                    <img src="images/evidenza/evidenza4.jpg" alt="img in evidenza" class="evidenza__img">
+                  </a>
+                </li>
+                <li class="evidenza__item">
+                  <a href="#" class="evidenza__link">
+                    <img src="images/evidenza/evidenza7.jpg" alt="img in evidenza" class="evidenza__img">
+                  </a>
+                </li>
+                <li class="evidenza__item">
+                  <a href="#" class="evidenza__link">
+                    <img src="images/evidenza/evidenza9.jpg" alt="img in evidenza" class="evidenza__img">
+                  </a>
+                </li>
+                <li class="evidenza__item">
+                  <a href="#" class="evidenza__link">
+                    <img src="images/evidenza/evidenza8.jpg" alt="img in evidenza" class="evidenza__img">
+                  </a>
+                </li>
+                <li class="evidenza__item">
+                  <a href="#" class="evidenza__link">
+                    <img src="images/evidenza/evidenza5.jpg" alt="img in evidenza" class="evidenza__img">
+                  </a>
+                </li>
+                <li class="evidenza__item">
+                  <a href="#" class="evidenza__link">
+                    <img src="images/evidenza/evidenza10.jpg" alt="img in evidenza" class="evidenza__img">
+                  </a>
+                </li>
+              </ul>
+            </div>
           </section>
           
-          <section id="marchi" class="marchi">
-            <h2 class="marchi__title">Collezioni</h2>
-            <ul class="marchi__list">
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo1.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo2.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo3.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo4.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo5.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo6.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo7.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo8.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo9.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo10.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo11.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-              <li class="marchi__item">
-                <a href="#" class="marchi__link">
-                  <img src="images/marchi/logo12.jpg" alt="marchio img" class="marchi__img">
-                </a>
-              </li>
-
-            </ul>
+          <section id="promozione" class="promozione" style="background-image:url('images/promozione/promozione1.jpg');">
+              <article class="promozione__inner">
+                <h1 class="promozione__title">Kartell</h1>
+                <h2 class="promozione__subtitle">il design è&nbsp;in&nbsp;offerta!</h2>
+                <p class="promozione__text">Mobilnovo inaugura il nuovo Kartell Shop con una Straordinaria Promozione! Sconti sui Prodotti e 4 classici Kartell, Louis Ghost , Masters, Bourgie e Take a Prezzi Incredibili. Il Design è in promozione <strong>solo a Febbraio</strong>.</p>
+                <button class="small">Scopri di più</button>
+              </article>
           </section>
 
+          <section id="footer" class="footer">
+            <div class="row">
+              <header class="footer__header">
+                <h2 class="footer__title">Mobilnovo</h1>
+              </header>
 
+              <section class="blurb">
+                <p class="blurb__text">Nasce nel 1968 con l'apertura a Roma dello storico showroom di via Anastasio II, seguita da una progressiva espansione nelle principali zone della capitale dedicate all'arredamento.</p>
+
+                <p class="blurb__text">Nel tempo l'azienda si è affermata nel panorama nazionale e internazionale come una realtà di riferimento nel settore del design e dell'arredamento contemporaneo.</p>
+              
+
+              <form class="newsletter"> 
+                <h2 class="newsletter__title">Newsletter</h2>
+                <p class="newsletter__text">Sign up to the newsletter and be the first to know our offers!</p>
+                <div class="newsletter__inner">
+                  <div class="newsletter__input">
+                    <input type="email" placeholder="esempio@email.com">
+                  </div>
+                  <div class="newsletter__button">
+                    <a class="button postfix" href="#">Go</a>
+                  </div>
+                </div>
+              </form>
+              </section>
+
+              <div class="negozi">
+                <ul class="negozi__list">
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/mobilnovo-viaanastasio.svg" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/mobilnovo-viasicilia.svg" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/mobilnovo-cucine.svg" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/mobilnovo-office.svg" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/mobilnovo-now.svg" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/angolo-in.svg" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/centroflou.png" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/centrocucine.png" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <footer id="content-info" class="contentinfo">
+            <div class="row">
+              <div class="contentinfo__inner">
+                <small>Mobilnovo srl &ndash; P.I. 00917721003 &mdash; Copyright © 2014 &mdash; Tutti i diritti riservati  <a class="contentinfo__link" href="#">impressum</a>&nbsp;<a class="contentinfo__link" href="#">privacy</a></small>
+              </div>
+            </div>
+          </footer>
         </main>
 
       <!-- close the off-canvas menu -->

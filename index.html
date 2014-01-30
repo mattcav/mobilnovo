@@ -27,7 +27,6 @@
         <!-- Off Canvas Menu -->
         <aside class="left-off-canvas-menu"> 
           <ul class="off-canvas-list"> 
-            <li><label>MOBILNOVO</label></li> 
             <li><a href="#">Profilo</a></li> 
             <li><a href="#">Collezioni</a></li> 
             <li><a href="#">Brand</a></li> 
@@ -38,7 +37,8 @@
         <main role="main" id="main">
           
           <section id="copertina" class="copertina">
-            <img class="copertina__img" src="images/copertina/copertina5.jpg" alt="Copertina">
+            <img class="copertina__img" data-interchange="[images/copertina/copertina5_small.jpg, (default)], [images/copertina/copertina5_medium.jpg, (medium)], , [images/copertina/copertina5_large.jpg, (large)]" alt="copertina"> 
+            <noscript><img src="images/copertina/copertina5.jpg" alt="copertina"></noscript>
           </section>
 
           <section id="evidenza" class="evidenza">
@@ -136,13 +136,29 @@
 
           <section id="footer" class="footer">
             <div class="row">
-              <h2 class="blurb__title">Mobilnovo</h1>
+              <header class="footer__header">
+                <h2 class="footer__title">Mobilnovo</h1>
+              </header>
 
-              <article class="blurb">
+              <section class="blurb">
                 <p class="blurb__text">Nasce nel 1968 con l'apertura a Roma dello storico showroom di via Anastasio II, seguita da una progressiva espansione nelle principali zone della capitale dedicate all'arredamento.</p>
 
                 <p class="blurb__text">Nel tempo l'azienda si è affermata nel panorama nazionale e internazionale come una realtà di riferimento nel settore del design e dell'arredamento contemporaneo.</p>
-              </article>
+              
+
+              <form class="newsletter"> 
+                <h2 class="newsletter__title">Newsletter</h2>
+                <p class="newsletter__text">Sign up to the newsletter and be the first to know our offers!</p>
+                <div class="newsletter__inner">
+                  <div class="newsletter__input">
+                    <input type="email" placeholder="esempio@email.com">
+                  </div>
+                  <div class="newsletter__button">
+                    <a class="button postfix" href="#">Go</a>
+                  </div>
+                </div>
+              </form>
+              </section>
 
               <div class="negozi">
                 <ul class="negozi__list">
@@ -158,12 +174,22 @@
                   </li>
                   <li class="negozi__item">
                     <a href="#" class="negozi__link">
-                      <img src="images/logos/mobilnovo-now.svg" alt="logo negozio" class="negozi__logo">
+                      <img src="images/logos/mobilnovo-cucine.svg" alt="logo negozio" class="negozi__logo">
                     </a>
                   </li>
                   <li class="negozi__item">
                     <a href="#" class="negozi__link">
                       <img src="images/logos/mobilnovo-office.svg" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/mobilnovo-now.svg" alt="logo negozio" class="negozi__logo">
+                    </a>
+                  </li>
+                  <li class="negozi__item">
+                    <a href="#" class="negozi__link">
+                      <img src="images/logos/angolo-in.svg" alt="logo negozio" class="negozi__logo">
                     </a>
                   </li>
                   <li class="negozi__item">
@@ -176,20 +202,18 @@
                       <img src="images/logos/centrocucine.png" alt="logo negozio" class="negozi__logo">
                     </a>
                   </li>
-                  <li class="negozi__item">
-                    <a href="#" class="negozi__link">
-                      <img src="images/logos/angolo-in.svg" alt="logo negozio" class="negozi__logo">
-                    </a>
-                  </li>
-                  <li class="negozi__item">
-                    <a href="#" class="negozi__link">
-                      <img src="images/logos/mobilnovo-viasicilia.svg" alt="logo negozio" class="negozi__logo">
-                    </a>
-                  </li>
                 </ul>
               </div>
             </div>
           </section>
+
+          <footer id="content-info" class="contentinfo">
+            <div class="row">
+              <div class="contentinfo__inner">
+                <small>Mobilnovo srl &ndash; P.I. 00917721003 &mdash; Copyright © 2014 &mdash; Tutti i diritti riservati  <a class="contentinfo__link" href="#">impressum</a>&nbsp;<a class="contentinfo__link" href="#">privacy</a></small>
+              </div>
+            </div>
+          </footer>
         </main>
 
       <!-- close the off-canvas menu -->
