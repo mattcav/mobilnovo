@@ -3,8 +3,14 @@
     border:medium none;
     box-shadow: none;
 }
+.tab-bar__title {
+    text-align:left !important;
+}
 .tab-bar__logo {
-    max-height: rem-calc(44);
+    max-height: rem-calc(36);
+    @media #{$large-up} {
+        max-height: rem-calc(44);   
+    }
 }
 .evidenza {
     @extend %section;
@@ -47,7 +53,7 @@
 .marchi__list {
     @include block-grid(
     $per-row: 3
-  );
+    );
 }
 
 .marchi__title {
@@ -69,4 +75,42 @@
     );
     margin: 2rem auto 1.5rem;
     padding:1rem;
+    max-width: 30rem;
+
+    @media #{$medium-up} {
+        float:right;
+
+    }
+}
+
+
+.footer {
+    @extend %section;
+    padding:1rem;
+    background-color:$grey;
+}
+.blurb {
+    @include grid-column(
+    $columns:12
+    );
+    @media #{$medium-up} {
+    @include grid-column(
+    $columns:6
+    );
+    }
+}
+.negozi {
+    @include grid-column(
+    $columns:12
+    );
+    @media #{$medium-up} {
+      @include grid-column(
+        $columns:6
+        );  
+    }
+}
+.negozi__list {
+    @include block-grid(
+    $per-row: 2
+    );
 }
