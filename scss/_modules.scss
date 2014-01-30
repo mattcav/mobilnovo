@@ -3,6 +3,9 @@
     border:medium none;
     box-shadow: none;
 }
+.tab-bar__logo {
+    max-height: rem-calc(44);
+}
 .evidenza {
     @extend %section;
     margin:1em 0;
@@ -10,7 +13,7 @@
 .evidenza__title {
     text-align:center;
 }
-.evidenza__list {
+.evidenza__list_three {
     @include block-grid(
     // This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable.
     // Available options: 1-12 by default, and false.
@@ -25,13 +28,45 @@
   );
 }
 
+.evidenza__list_four {
+    @include block-grid(
+    // This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable.
+    // Available options: 1-12 by default, and false.
+    $per-row: 4,
+
+    // This controls how much space is between each item in the block grid.
+    // Use a variable or any pixel or em values.
+    $spacing: $block-grid-default-spacing,
+
+    // This controls whether or not base styles come through, set to false to leave out.
+    $base-style: true
+  );
+}
+
 
 .marchi__list {
     @include block-grid(
-    $per-row: 2
+    $per-row: 3
   );
 }
 
 .marchi__title {
     @extend .evidenza__title;
+}
+
+.promozione {
+    @extend %section;
+    background-position:center center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.promozione__inner {
+    @extend %bg-white;
+    @include grid-column(
+    $columns:10,
+    $center:true,
+    $float:none
+    );
+    margin: 2rem auto 1.5rem;
+    padding:1rem;
 }
