@@ -9302,11 +9302,11 @@ a("section",this),a("> ul",this).first()}b.data("index",0);var d=b.parent();d.ha
 }));
 $(document).foundation();
 //add ready class
-$('body').imagesLoaded()
-  .always( function( instance ) {
-    $('html').addClass('ready');
-  });
-
+// $('body').imagesLoaded()
+//   .always( function( instance ) {
+//     $('html').addClass('ready');
+//   });
+$('html').addClass('ready');
 // doc ready
 $(document).ready(function() {
   jQuery.extend(verge);

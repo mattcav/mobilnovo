@@ -42,19 +42,27 @@
 
 .evidenza__list_four {
     @include block-grid(
-    // This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable.
-    // Available options: 1-12 by default, and false.
     $per-row: 4,
-
-    // This controls how much space is between each item in the block grid.
-    // Use a variable or any pixel or em values.
     $spacing: $block-grid-default-spacing,
-
-    // This controls whether or not base styles come through, set to false to leave out.
     $base-style: true
   );
 }
 
+.evidenza__figure {
+    margin:0;
+    position:relative;
+}
+
+.evidenza__img {
+    position:relative;
+    z-index:10;
+}
+
+.evidenza__caption {
+    @include position(absolute, bottom 0 right 0 left 0);
+    background:$black;
+    text-align: center;
+}
 
 .marchi__list {
     @include block-grid(

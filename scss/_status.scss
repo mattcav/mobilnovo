@@ -32,21 +32,21 @@ body {
 
 .js {
         // evidenza imgs
-        .coming.evidenza__item {
-            transform:translateY(250px);
-            opacity:0;
-            transition: all 0.8s ease-in-out 0s;
-        }
+        // .coming.evidenza__item {
+        //     transform:translateY(250px);
+        //     opacity:0;
+        //     transition: all 0.8s ease-in-out 0s;
+        // }
 
-        .coming.evidenza__item:nth-child(odd) {
-            transform:translateY(250px) ;
-            transition: all 1s ease-in-out 0s;
-        }
+        // .coming.evidenza__item:nth-child(odd) {
+        //     transform:translateY(250px) ;
+        //     transition: all 1s ease-in-out 0s;
+        // }
 
-        .come-in.evidenza__item {
-            opacity:1;
-            transform:translateY(0) !important;
-        }
+        // .come-in.evidenza__item {
+        //     opacity:1;
+        //     transform:translateY(0) !important;
+        // }
 
         // promozione text
         .coming.promozione {
