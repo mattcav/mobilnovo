@@ -20,10 +20,12 @@
 }
 .evidenza {
     @extend %section;
-    margin:1em 0;
+    @extend %vertical-rythm;
+    // margin:1em 0;
 }
 .evidenza__title {
     text-align:center;
+    margin-bottom: 3rem;
 }
 .evidenza__list_three {
     @include block-grid(
@@ -85,6 +87,7 @@
 
 .promozione {
     @extend %section;
+    @extend %vertical-rythm;
     background-position:center center;
     background-size:cover;
     background-repeat:no-repeat;
@@ -104,7 +107,7 @@
         float:right;
     }
     @media #{$large-up} {
-            margin: 3rem 0 2.5rem;
+            margin: 3rem 0 4.5rem;
     }
 }
 

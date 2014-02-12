@@ -1,10 +1,7 @@
 $(document).foundation();
 //add ready class
-// $('body').imagesLoaded()
-//   .always( function( instance ) {
-//     $('html').addClass('ready');
-//   });
 $('html').addClass('ready');
+
 // doc ready
 $(document).ready(function() {
   jQuery.extend(verge);
