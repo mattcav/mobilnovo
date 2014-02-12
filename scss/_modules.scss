@@ -177,6 +177,7 @@
     }
 }
 
+// negozi
 .negozi {
     @include grid-column(
     $columns:12
@@ -193,15 +194,81 @@
         );  
     }
 }
+
 .negozi__list {
     @include block-grid(
-    $per-row: 2,
-    // This controls how much space is between each item in the block grid.
-    // Use a variable or any pixel or em values.
-    $spacing: 2em
-    );
+        $per-row: 2,
+        $spacing: 2em
+        );
 }
 
+.negozi__title {
+    color:$white;
+    text-align: center;
+}
+
+//footer-nav
+.footer-nav {
+    @include grid-column(
+    $columns:12
+    );
+    @media #{$medium-up} {
+      @include grid-column(
+        $columns:6
+        );  
+    }
+    @media #{$large-up} {
+      @include grid-column(
+        $columns:5,
+        $float:right
+        );  
+    }
+}
+.footer-nav__list {
+   @include side-nav();
+   color:$red;
+   list-style: square !important;
+   padding-left:2rem;
+   padding-right:2rem;
+}
+
+.footer-nav__link {
+    color:$white !important;
+    font-size: rem-calc(18);
+    @media #{$medium-up} {
+        font-size:rem-calc(23);
+    }
+}
+
+.punti-vendita {
+    @extend %section;
+    padding:3em 0;
+}
+
+.punti-vendita__list {
+    @include block-grid(
+    $per-row: 2,
+    $spacing: 2em
+    );
+    @media #{$large-up} {
+        @include block-grid(
+        $per-row: 5,
+        $spacing: 1em 2em
+        );
+    }
+}
+.punti-vendita__title {
+    @extend .evidenza__title;
+}
+
+.punto-vendita__title {
+    font-weight:100;
+    font-size:rem-calc(23);
+}
+
+.punto-vendita__text {
+    font-weight:100;
+}
 
 .newsletter {
     color:$white;
