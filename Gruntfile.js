@@ -38,7 +38,6 @@ module.exports = function(grunt) {
       app: {
         src: [
             'bower_components/jquery/jquery.js', 
-            'bower_components/imagesloaded/imagesloaded.js', 
             'bower_components/foundation/js/foundation.min.js',
             'bower_components/foundation/js/foundation/foundation-interchange.js',
             'bower_components/verge/verge.js', 
