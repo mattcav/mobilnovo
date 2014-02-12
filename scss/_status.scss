@@ -18,7 +18,7 @@ a {
     }
 }
 
-.no-touch {
+.no-touch, .touch {
     @media #{$large-up} {
         .show-caption {
             img {

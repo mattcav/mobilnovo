@@ -69,10 +69,10 @@
 .evidenza__caption {
     @include position(absolute, top 1px bottom 1px right 1px left 0);
     background:$red;
-    color:$white;
     align-items: center;
     display: flex;
     justify-content: center;
+    color:$white;
 }
 .caption__container {
     @include grid-column {
@@ -85,16 +85,15 @@
 .caption__label {
     margin:0;
     line-height:1.2;
-    font-size:rem-calc(23);
 }
 .caption--name {
     border-bottom:1px solid $black;
     margin-bottom: 0.25em;
     padding-bottom: 0.5em;
+    font-weight:100;
+    font-size:rem-calc(23);
 }
 .caption--brand {
-    color:$black;
-    font-size: rem-calc(18);
     text-transform: uppercase;
     font-family: $header-font-family;
 }
@@ -135,7 +134,7 @@
     }
     @media #{$large-up} {
             margin: 3rem 0 4.5rem;
-            padding:1rem 1.5rem;
+            padding:1rem 2rem;
     }
 }
 
