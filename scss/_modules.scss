@@ -21,11 +21,17 @@
 .evidenza {
     @extend %section;
     @extend %vertical-rythm;
+    @media #{$large-up} {
+        @extend %vertical-rythm-large;
+    }
     // margin:1em 0;
 }
 .evidenza__title {
     text-align:center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+    @media #{$large-up} {
+        display:none;
+    }
 }
 .evidenza__list_three {
     @include block-grid(
@@ -62,7 +68,7 @@
 
 .evidenza__caption {
     @include position(absolute, top 1px bottom 1px right 1px left 0);
-    background:$grey;
+    background:$red;
     color:$white;
 }
 .caption__container {
@@ -88,6 +94,9 @@
 .promozione {
     @extend %section;
     @extend %vertical-rythm;
+    @media #{$large-up} {
+        @extend %vertical-rythm-large;
+    }
     background-position:center center;
     background-size:cover;
     background-repeat:no-repeat;
