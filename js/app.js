@@ -1,9 +1,9 @@
 $(document).foundation();
 //add ready class
-$('body').imagesLoaded()
-  .always( function( instance ) {
+// $('body').imagesLoaded()
+//   .always( function( instance ) {
     $('html').addClass('ready');
-  });
+  //});
 
 // doc ready
 $(document).ready(function() {
