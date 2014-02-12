@@ -1,4 +1,4 @@
-$transition: all 300ms ease-in-out 0s;  
+$transition: all 500ms ease-in-out 0s;  
     
 a {
     transition:$transition;
@@ -17,6 +17,19 @@ a {
         transform: scale(1.1);
     }
 }
+
+.show-caption {
+    img {
+        transition:$transition;
+    }
+
+    &:hover {
+        img {
+            transform: translateY(-25%) scale(0.5);
+        }
+    }
+}
+
 
 
 body {

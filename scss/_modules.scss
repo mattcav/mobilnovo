@@ -59,11 +59,20 @@
 }
 
 .evidenza__caption {
-    @include position(absolute, bottom 0 right 0 left 0);
-    background:$black;
-    text-align: center;
+    @include position(absolute, top 1px bottom 1px right 1px left 0);
+    background:$grey;
+    color:$white;
 }
-
+.caption__container {
+    @include grid-column {
+        $columns:12
+    }
+    @include position(absolute, bottom 0 left 0 right 0);
+}
+.caption__label {
+    margin:0;
+    line-height:1.2;
+}
 .marchi__list {
     @include block-grid(
     $per-row: 3
