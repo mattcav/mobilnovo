@@ -131,6 +131,7 @@
     background-size:cover;
     background-repeat:no-repeat;
 }
+
 .promozione__inner {
     @extend %bg-white;
     @include grid-column(
@@ -151,6 +152,44 @@
     }
 }
 
+// Layout alternativo
+
+.promozione__alt {
+    @extend %section;
+    @extend %vertical-rythm;
+    @media #{$large-up} {
+        @extend %vertical-rythm-large;
+    }
+    @extend %bg-lightGrey;
+    padding:1.938rem 0.9375rem;
+
+
+}
+
+.promozione__visual {
+     @include grid-column(
+        $columns: 12
+    );
+     @media #{$medium-up} {
+        @include grid-column(
+        $columns: 6
+        );
+     }
+    padding:0;
+}
+
+.promozione__copy {
+    @extend %bg-white;
+    @include grid-column(
+        $columns: 12
+    );
+    @media #{$medium-up} {
+        @include grid-column(
+        $columns: 6
+        );
+    }
+
+}
 
 .footer {
     @extend %section;
