@@ -17,15 +17,27 @@
     width:100%
 }
 
+.item__column-container {
+
+}
 .item__column {
          @include grid-column(
-            $columns:12
+            $columns:12,
+            $collapse:true
             );
         
         @media #{$medium-up} {
             @include grid-column(
-                $columns:6
+                $columns:6,
+                $collapse:true
             );  
+        }
+
+        @media #{$large-up} {
+             @include grid-column(
+                $columns:12,
+                $collapse:true
+            ); 
         }
 }
 
@@ -33,47 +45,49 @@
     @include grid-column(
         $columns:12
     );
+    @media #{$large-up} {
+        @include grid-column(
+            $columns:6
+        ); 
+    }
+    @media #{$xlarge-up} {
+        @include grid-column(
+            $columns:12
+        ); 
+    }
     
     > figure {
         text-align: center;
         // @media #{$medium-up} {
         //     width:100%;
         // }
-
-        @media #{$large-up} {
-        margin:0;
-        @include grid-column(
-            $columns:2,
-            $collapse:true
-            );  
-        }
     }
     
-    > section {
+     > section {
         @include grid-column(
         $columns:12
         );
-        @media #{$large-up} {
+        @media #{$xlarge-up} {
           @include grid-column(
-            $columns:10
+            $columns:12
             );  
         }
     }
 }
 
 .media--right {
-    > figure {
-        @media #{$large-up} {
-          @include grid-column(
-            $columns:4,
-            $float:right
-            );  
-        }
-    } 
+    // > figure {
+    //     @media #{$xlarge-up} {
+    //       @include grid-column(
+    //         $columns:12,
+    //         $float:right
+    //         );  
+    //     }
+    // } 
     > section {
-        @media #{$large-up} {
+        @media #{$xlarge-up} {
           @include grid-column(
-            $columns:8,
+            $columns:12,
             $float:left
             );  
         }
