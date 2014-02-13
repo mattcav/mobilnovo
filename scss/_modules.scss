@@ -1,16 +1,29 @@
 .tab-bar__trigger {
-    @extend %bg-red;
+    //@extend %bg-red;
     border:medium none;
-    box-shadow: none;
+    box-shadow: none !important;
     @media #{$large-up} {
-        width:8.0625rem !important;
+        width:8rem !important;
+        padding:0 0.625rem;
+    }
+}
+.tab-bar__button {
+    background:$white;
+    color:$red;
+    border:1px solid $red;
+    font-size: 0.8rem !important;
+    margin: 0 5%;
+    width: 90%;
+    @media #{$large-up} {
+        margin:0;
+        width:100%;
+        color:$white;
+        background:$red;
     }
 }
 .tab-bar__title {
-    text-align:left !important;
-    @media #{$large-up} {
-        left:8.0625rem !important;
-    }
+    text-align:left;
+    right:8rem !important;
 }
 .tab-bar__logo {
     max-height: rem-calc(36);
@@ -146,9 +159,6 @@
     @media #{$medium-up} {
         padding:3rem 1rem 2rem;
     }
-    @media #{$large-up} {
-        padding:4rem 1rem 2rem;
-    }
 }
 .footer__header {
     @include grid-column(
@@ -168,6 +178,7 @@
         @include grid-column(
         $columns:6
         );
+        margin-top:2em;
     }
 }
 .blurb__text, .newsletter__text {
