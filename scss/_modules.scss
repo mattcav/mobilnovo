@@ -198,32 +198,43 @@
 
 .negozi__list {
     @include block-grid(
-        $per-row: 2,
-        $spacing: 2em
+        $per-row: 2
+        //$spacing: 2em
         );
 }
 
-.negozi__title {
-    color:$white;
-    text-align: center;
+.negozi--title {
+    font-size:rem-calc(27);
 }
-// Aggiunti da Emanuela
-
-.negozi__link {
-    align-items: center;
-    font-size: 0.8em;
-    color:#cccccc;
-
-}
-
-.negozi__item {
-    border-bottom: 1px solid $white;
-    margin-bottom: 0.5em;
+.negozio {
     color:$white;
-    @media #{$small-only} {
-        font-size:0.8em;
+    font-size:0.8em;
+    @media #{$medium-up} {
+        font-size:1em;
     }
 }
+
+.negozio__inner {
+    border-bottom: 1px solid $white;
+    margin-bottom: 0.5em;
+    width:100%;
+    @include grid-column(
+        $columns:12,
+        $collapse:true
+    ); 
+}
+
+.negozio__title {
+    color:$white;
+    font-size:1rem;
+    margin-bottom:0;
+}
+.negozio__link {
+    font-size: 0.8em;
+    color:$lightGrey;
+}
+
+
 
 
 //footer-nav
