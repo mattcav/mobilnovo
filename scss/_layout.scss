@@ -31,16 +31,18 @@
 
 .media {
     @include grid-column(
-        $columns:12,
-        $collapse:true
+        $columns:12
     );
     
     > figure {
         text-align: center;
+        // @media #{$medium-up} {
+        //     width:100%;
+        // }
 
-        @media #{$medium-up} {
-         margin:0;
-          @include grid-column(
+        @media #{$large-up} {
+        margin:0;
+        @include grid-column(
             $columns:2,
             $collapse:true
             );  
@@ -51,7 +53,7 @@
         @include grid-column(
         $columns:12
         );
-        @media #{$medium-up} {
+        @media #{$large-up} {
           @include grid-column(
             $columns:10
             );  
@@ -61,7 +63,7 @@
 
 .media--right {
     > figure {
-        @media #{$medium-up} {
+        @media #{$large-up} {
           @include grid-column(
             $columns:4,
             $float:right
@@ -69,7 +71,7 @@
         }
     } 
     > section {
-        @media #{$medium-up} {
+        @media #{$large-up} {
           @include grid-column(
             $columns:8,
             $float:left

@@ -162,11 +162,35 @@
     }
     @extend %bg-lightGrey;
     padding:1.938rem 0.9375rem;
+}
 
+.promo-alt {
+    background:$white;
+    @include grid-column(
+        $columns:11,
+        $center:true,
+        $collapse:true
+        );
+    border-bottom:3px solid $red;
+}
 
+.promo-alt__header {
+    background:$red;
+    color:$white;
+    @include grid-column(
+        $columns:12
+        );
+    @media #{$medium-up} {
+        margin-bottom:2em;
+    }
+}
+.promo-alt__label {
+    font-size:rem-calc(18);
+    margin-bottom:0;
 }
 
 .promozione__visual {
+    margin:0;
      @include grid-column(
         $columns: 12
     );
@@ -190,6 +214,10 @@
     }
 
 }
+.evidenza_title--alt {
+    display:block !important;
+}
+// fine alt
 
 .footer {
     @extend %section;
@@ -469,14 +497,15 @@
     @media #{$large-up} {
         margin:0;
         @include grid-column(
-            $columns:5
+            $columns:4
             );
     }
 }
 .item__inner {
     @media #{$large-up} {
         @include grid-column(
-            $columns:7
+            $columns:8,
+            $collapse:true
             );
     }
 }
@@ -494,3 +523,57 @@
     display: block;
 }
 
+.item__title {
+    font-size:rem-calc(36);
+    line-height: 1.1;
+}
+
+// texts
+.item__desc {
+    font-size:0.8rem;
+}
+.brand__text {
+    @extend .item__desc;
+}
+.designer__text {
+    @extend .item__desc;
+}
+
+.item__sidebar {
+    padding:0;
+}
+
+// brand
+.brand {
+    background-color:$lightGrey;
+    padding:2em;
+}
+.brand__label {
+    font-size:rem-calc(27);
+    letter-spacing: 0.3px;
+}
+.brand__link {
+    font-style:italic;
+    text-decoration: underline;
+}
+
+// designer
+.designer {
+    background-color:$darkGrey;
+    padding:2em;
+}
+.designer__label {
+    @extend .brand__label;
+    color:$lightGrey;
+}
+.designer__title {
+    color:$lightGrey;
+    font-size:rem-calc(23);
+}
+.designer__text {
+    color:$lightGrey;
+}
+.designer__link {
+    @extend .brand__link;
+    color:$white;
+}
