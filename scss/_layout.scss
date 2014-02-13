@@ -12,3 +12,68 @@
 %vertical-rythm-large {
     margin-top:3.5em;
 }
+
+%w100 {
+    width:100%
+}
+
+.item__column {
+         @include grid-column(
+            $columns:12
+            );
+        
+        @media #{$medium-up} {
+            @include grid-column(
+                $columns:6
+            );  
+        }
+}
+
+.media {
+    @include grid-column(
+        $columns:12,
+        $collapse:true
+    );
+    
+    > figure {
+        text-align: center;
+
+        @media #{$medium-up} {
+         margin:0;
+          @include grid-column(
+            $columns:2,
+            $collapse:true
+            );  
+        }
+    }
+    
+    > section {
+        @include grid-column(
+        $columns:12
+        );
+        @media #{$medium-up} {
+          @include grid-column(
+            $columns:10
+            );  
+        }
+    }
+}
+
+.media--right {
+    > figure {
+        @media #{$medium-up} {
+          @include grid-column(
+            $columns:4,
+            $float:right
+            );  
+        }
+    } 
+    > section {
+        @media #{$medium-up} {
+          @include grid-column(
+            $columns:8,
+            $float:left
+            );  
+        }
+    }
+}

@@ -422,3 +422,36 @@
         font-size:rem-calc(44);
     }       
 }
+
+
+// single item
+.item__figure {
+    text-align: center;
+    @media #{$large-up} {
+        margin:0;
+        @include grid-column(
+            $columns:5
+            );
+    }
+}
+.item__inner {
+    @media #{$large-up} {
+        @include grid-column(
+            $columns:7
+            );
+    }
+}
+.item__img {
+    max-height:500px;
+    max-height:65vh;
+}
+
+.item__spec {
+    width:100%;
+}
+
+.item__action {
+    margin: 0 auto 1em;
+    display: block;
+}
+
