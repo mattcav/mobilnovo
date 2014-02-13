@@ -189,7 +189,8 @@
     }
     @media #{$large-up} {
       @include grid-column(
-        $columns:5,
+        //$columns:5,
+        $columns:6,
         $float:right
         );  
     }
@@ -206,6 +207,24 @@
     color:$white;
     text-align: center;
 }
+// Aggiunti da Emanuela
+
+.negozi__link {
+    align-items: center;
+    font-size: 0.8em;
+    color:#cccccc;
+
+}
+
+.negozi__item {
+    border-bottom: 1px solid $white;
+    margin-bottom: 0.5em;
+    color:$white;
+    @media #{$small-only} {
+        font-size:0.8em;
+    }
+}
+
 
 //footer-nav
 .footer-nav {
