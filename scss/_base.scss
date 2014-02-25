@@ -1,6 +1,17 @@
+p {
+    font-size:0.8em;
+    @media #{$large-up} {
+        font-size:0.9rem;
+    }
+}
 small {
     font-family:"adelle-sans", sans-serif;
 }
 a, input, button {
     -ms-touch-action: none !important;
+}
+
+svg {
+    max-width: 100%;
+    max-height: 100%;
 }

@@ -93,3 +93,37 @@
         }
     }
 }
+
+
+.obj {
+    display:flex !important;
+    align-items: center;
+
+    .obj__title {
+        margin:0;
+    }
+
+    .obj__figure {
+        @include grid-column(
+            $columns:4,
+            $collapse:true
+            );
+        margin:0;
+        @media #{$medium-up} {
+           @include grid-column(
+            $columns:12,
+            $float:none
+            ); 
+        }
+
+    }
+    .obj__section {
+         @include grid-column(
+            $columns:8
+            );
+
+        @media #{$medium-up} {
+          display:none;   
+        }
+    }
+}
