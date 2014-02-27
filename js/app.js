@@ -20,3 +20,15 @@ $(document).ready(function() {
         } 
     });
   });
+
+
+
+enquire.register("screen and (min-width:45em)", function() {
+    if(document.getElementById("container")){
+      var $container = $('#container');
+      $container.masonry({
+        "columnWidth": ".obj",
+        "itemSelector": ".masonry"
+      }); 
+    } 
+});

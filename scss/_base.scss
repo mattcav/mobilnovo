@@ -1,3 +1,13 @@
+
+
+body {
+    position:static;
+}
+
+main {
+    clear:both;
+}
+
 p {
     font-size:0.8em;
     @media #{$large-up} {

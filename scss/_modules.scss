@@ -2,35 +2,39 @@
     //@extend %bg-red;
     border:medium none;
     box-shadow: none !important;
-    @media #{$large-up} {
-        width:8rem !important;
-        padding:0 0.625rem;
-    }
+    text-align:right;
+    @include grid-column(
+        $columns:4,
+        $float:right
+        ); 
 }
 .tab-bar__button {
     background:$white;
     color:$red;
     border:1px solid $red;
     font-size: 0.8rem !important;
-    right:2em;
+    margin-top:1rem;
     @media #{$large-up} {
-        right:1em;
-        margin:0;
-        width:100%;
+        // right:1em;
+        // margin:0;
+        // width:100%;
         color:$white;
         background:$red;
     }
 }
 .tab-bar__title {
-    text-align:left;
-    right:8rem !important;
+    @include grid-column(
+        $columns:8
+        ); 
+    height: rem-calc(76);
+    max-width:rem-calc(250);
+    @media #{$medium-up} {
+        margin-top:rem-calc(5);
+    }
 }
 .tab-bar__logo {
     max-width:100%;
     max-height:100%;
-    @media #{$medium-up} {
-        max-width: rem-calc(250);
-    }
 }
 .evidenza {
     @extend %section;
@@ -47,55 +51,34 @@
         display:none;
     }
 }
-.evidenza__list_three {
+.evidenza__list {
     @include block-grid(
-    // This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable.
-    // Available options: 1-12 by default, and false.
-    $per-row: 3,
-
-    // This controls how much space is between each item in the block grid.
-    // Use a variable or any pixel or em values.
-    $spacing: $block-grid-default-spacing,
-
-    // This controls whether or not base styles come through, set to false to leave out.
-    $base-style: true
-  );
+        $per-row: 3,
+        $spacing: $block-grid-default-spacing,
+        $base-style: true
+    );
 }
 
-.evidenza__list_four {
-    @include block-grid(
-    $per-row: 4,
-    $spacing: $block-grid-default-spacing,
-    $base-style: true
-  );
-}
-
-.evidenza__figure {
+.grid-item__figure {
     margin:0;
     position:relative;
 }
 
-.evidenza__img {
+.grid-item__img {
     position:relative;
     z-index:10;
 }
 
-.evidenza__caption {
+.grid-item__caption {
     @include position(absolute, top 1px bottom 1px right 1px left 0);
     background:$red;
     align-items: center;
     display: flex;
     justify-content: center;
     color:$white;
-}
-.caption__container {
-    @include grid-column {
-        $columns:12
-    }
     text-align: center;
-    width:100%;
-    //@include position(absolute, bottom 0 left 0 right 0);
 }
+
 .caption__label {
     margin:0;
     line-height:1.2;
@@ -112,16 +95,7 @@
     font-family: $header-font-family;
 }
 
-.marchi__list {
-    @include block-grid(
-    $per-row: 3
-    );
-}
-
-.marchi__title {
-    @extend .evidenza__title;
-}
-
+// promozione
 .promozione {
     @extend %section;
     @extend %vertical-rythm;
@@ -222,6 +196,7 @@
 
 .footer {
     @extend %section;
+    margin-top:-1px;
     padding:1rem;
     background-color:$grey;
     @media #{$medium-up} {
@@ -588,20 +563,27 @@
     }
 }
 
-.item__taxonomies {
-    background:lighten($black, 50);
-    color:$white;
-    padding:0.5em;
-    display:block;
-    font-style:italic;
-    &:hover {
-        color:$lightGrey;
-    }
+.item__category {
+    a {
+        background:lighten($black, 50);
+        color:$white;
+        font-family: $header-font-family;
+        padding:0.5em;
+        display:block;
+        &:after {
+            content:" »";
+        }
+        &:hover {
+            color:$lightGrey;
+        }
 
-    @media #{$medium-up} {
-        padding:1em;
+        @media #{$medium-up} {
+            padding:1em;
+        }
+
     }
 }
+
 .item__breadcrumb {
     color:$white;
     display:block;
@@ -632,7 +614,7 @@
 .designer {
     background-color:$grey;
     padding:2em;
-    border-bottom:4px solid $darkRed;
+    border-bottom:4px solid $black;
     @media #{$medium-up} {
         border:medium none;
     }
@@ -654,42 +636,53 @@
     @extend .brand__link;
     color:$white;
 }
-
-.indice__list {
-     @include block-grid(
-    // This controls how many elements will be on each row of the block grid. Set this to whatever number you need, up to the max allowed in the variable.
-    // Available options: 1-12 by default, and false.
-    $per-row: 1,
-
-    // This controls how much space is between each item in the block grid.
-    // Use a variable or any pixel or em values.
-    $spacing: 1px,
-
-    // This controls whether or not base styles come through, set to false to leave out.
-    $base-style: true
-  );
-  margin:1.5rem 1rem;
-  overflow: hidden;
-  float:left;
-
-  @media #{$medium-up} {
-    @include block-grid(
-        $per-row:3
-        );
-    margin:1.5rem 1rem;
-  }
-  @media #{$large-up} {
-    @include block-grid(
-        $per-row:5
-        );
-    margin:1.5rem 1rem;
-  }
+.indice {
+    margin-top:1rem;
 }
 .indice__container {
     @include grid-column(
         $columns:12
         );
+
     padding:1.5rem;
     background:$darkWhite;
-    margin-top:1rem;
+    @media #{$medium-up}{
+        padding:2rem !important;
+        @include grid-column(
+            $columns:6
+        );
+    }
+    @media #{$large-up}{
+        @include grid-column(
+            $columns:4
+        );
+    }
+}
+
+.indice__img {
+    max-width: 50%;
+}
+.indice__text, .indice__title {
+    display: block;
+    margin: 0 auto;
+    max-width: 25rem;
+}
+// strip
+.strip {
+    background-color:$red;
+    color:$white;
+}
+
+.strip__text {
+    text-align: center;
+    font-variant: small-caps;
+    margin:0;
+    padding:1rem 0;
+        @media #{$medium-up}{
+            font-size:rem-calc(18);
+        }
+}
+
+.strip__link {
+    @extend .contentinfo__link;
 }

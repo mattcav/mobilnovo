@@ -38,14 +38,17 @@ module.exports = function(grunt) {
       app: {
         src: [
             'bower_components/jquery/jquery.js', 
+            'bower_components/enquire/dist/enquire.js',
             'bower_components/foundation/js/foundation.min.js',
             'bower_components/foundation/js/foundation/foundation-interchange.js',
+            'bower_components/isotope/isotope_beta.js',
             'bower_components/verge/verge.js', 
             'js/app.js'
         ],
         dest: 'js/build/app.js',
       }
     },
+
     uglify: {
        app: {
           files: {
@@ -66,6 +69,7 @@ module.exports = function(grunt) {
         files: 'js/*.js',
         tasks: ['concat', 'uglify']
       },
+      
       options: {
           livereload: true,
         }

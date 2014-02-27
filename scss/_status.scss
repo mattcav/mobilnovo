@@ -19,7 +19,7 @@ a {
 }
 
 .no-touch, .touch {
-    @media #{$large-up} {
+    @media #{$medium-up} {
         .show-caption {
             img {
                 transition:$transition;
