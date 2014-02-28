@@ -68,8 +68,8 @@
 }
 
 .copertina__caption {
-    background:$red;
-    color:$white;
+    background:$copertina;
+    color:$black;
     font-size:rem-calc(18);
     padding:2rem 1rem;
     text-align:center;
@@ -82,6 +82,7 @@
 }
 .alt-promozione {
     padding:0;
+    background:$promozioni;
 }
 .alt-promozine-figure {
     display:block;
@@ -94,3 +95,125 @@
 .alt-promozione__subtitle {
     font-size:rem-calc(18);
 }
+
+
+// vetrina 
+.vetrina__list {
+    @include block-grid(
+        $per-row: 1,
+        $spacing: 1px,
+        $base-style: true
+    );
+
+    @media #{$medium-up} {
+        @include block-grid(
+        $per-row: 3,
+        $spacing: 1px
+        );
+    }
+
+    @media #{$large-up} {
+        @include block-grid(
+        $per-row: 4,
+        $spacing: 1px
+     );
+    }
+}
+
+
+// alt grid item
+.alt-grid-item__figure {
+    margin:0;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content: flex-start;
+}
+
+.alt-grid-item__img {
+    @include grid-column (
+            $columns:6,
+            $collapse: true
+        );
+}
+
+.alt-grid-item__caption {
+    @include grid-column (
+        $columns:6,
+        $collapse: true
+    );
+    @include position(absolute, right 0 top 0);
+    height:100%;
+
+    background-color:$red;
+    color:$white;
+
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+}
+
+.caption__container {
+    padding:0 1em;
+}
+
+.alt-caption--name {
+    font-size:1rem;
+}
+
+.alt-caption--brand {
+    font-size:0.8rem;
+}
+
+.alt-grid-item {
+    @media #{$small-only} {
+        &:nth-child(odd) {
+            .alt-grid-item__figure {justify-content: flex-end;}
+            .alt-grid-item__caption {right:auto; left:0;}
+        }
+    }
+
+    @media #{$medium-only} {
+        &:nth-child(-n+3) {
+            .alt-grid-item__figure {justify-content: flex-end;}
+            .alt-grid-item__caption {right:auto; left:0;}
+        }
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9)  {
+            .alt-grid-item__figure {justify-content: flex-end;}
+            .alt-grid-item__caption {right:auto; left:0;}
+        }
+    }
+
+     @media #{$large-up} {
+        &:nth-child(-n+4),
+        &:nth-last-child(-n+4) {
+            .alt-grid-item__figure {justify-content: flex-end;}
+            .alt-grid-item__caption {right:auto; left:0;}
+        }
+    }
+
+
+    // &:nth-child(3n+1) {
+    //     .alt-grid-item__caption {
+    //         background-color:$copertina;
+    //     }
+    // }
+
+    //  &:nth-child(3n+2) {
+    //     .alt-grid-item__caption {
+    //         background-color:#dcdcdc;
+    //     }
+    // }
+
+    // &:nth-child(3n+3) {
+    //     .alt-grid-item__caption {
+    //         background-color:$grey;
+    //     }
+    // }
+}
+
+
+

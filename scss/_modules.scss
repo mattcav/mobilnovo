@@ -84,13 +84,14 @@
     line-height:1.2;
 }
 .caption--name {
-    border-bottom:1px solid $black;
-    margin-bottom: 0.25em;
-    padding-bottom: 0.5em;
     font-weight:100;
     font-size:rem-calc(23);
 }
 .caption--brand {
+    border-top:1px solid $black;
+    margin-top: 0.25em;
+    padding-top: 0.5em;
+    
     text-transform: uppercase;
     font-family: $header-font-family;
 }
