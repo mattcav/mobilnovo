@@ -1,7 +1,9 @@
-
-
+html {
+    -webkit-overflow-scrolling: touch;
+}
 body {
     position:static;
+    font-feature-settings:"liga", "dlig";
 }
 
 main {

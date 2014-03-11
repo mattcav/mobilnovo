@@ -96,6 +96,12 @@
     font-size:rem-calc(18);
 }
 
+.alt-promozione__link {
+    background:transparent;
+    color:$white;
+    border:1px solid $red;
+}
+
 
 // vetrina 
 .vetrina__list {
@@ -107,14 +113,14 @@
 
     @media #{$medium-up} {
         @include block-grid(
-        $per-row: 3,
+        $per-row: 2,
         $spacing: 1px
         );
     }
 
     @media #{$large-up} {
         @include block-grid(
-        $per-row: 4,
+        $per-row: 3,
         $spacing: 1px
      );
     }
@@ -145,8 +151,8 @@
     @include position(absolute, right 0 top 0);
     height:100%;
 
-    background-color:$red;
-    color:$white;
+    background-color:$darkWhite;
+    color:$black;
 
     display:flex;
     align-items:center;
@@ -164,34 +170,78 @@
 
 .alt-caption--brand {
     font-size:0.8rem;
+    border-color:$darkGrey !important;
 }
 
 .alt-grid-item {
     @media #{$small-only} {
         &:nth-child(odd) {
             .alt-grid-item__figure {justify-content: flex-end;}
-            .alt-grid-item__caption {right:auto; left:0;}
+            .alt-grid-item__caption {
+                right:auto; left:0; 
+                &:after {
+                    @include css-triangle(1.5em, $darkWhite, left);
+                    @include position(absolute, top 50% right -2.8em);
+                    margin-top:-1.5em;
+                }
+            }
         }
+        &:nth-child(even) {
+            .alt-grid-item__caption {
+                &:after {
+                    @include css-triangle(1.5em, $darkWhite, right);
+                    @include position(absolute, top 50% left -2.8em);
+                    margin-top:-1.5em;
+                }
+            }
+        }    
     }
 
     @media #{$medium-only} {
-        &:nth-child(-n+3) {
+        &:nth-child(-n+2) {
             .alt-grid-item__figure {justify-content: flex-end;}
-            .alt-grid-item__caption {right:auto; left:0;}
+            .alt-grid-item__caption {right:auto; left:0; 
+                     &:after {
+                        @include css-triangle(1.5em, $darkWhite, left);
+                        @include position(absolute, top 50% right -2.8em);
+                        margin-top:-1.5em;
+                    }
+                }
         }
         &:nth-child(7),
         &:nth-child(8),
         &:nth-child(9)  {
             .alt-grid-item__figure {justify-content: flex-end;}
-            .alt-grid-item__caption {right:auto; left:0;}
+            .alt-grid-item__caption {right:auto; left:0;
+                    &:after {
+                        @include css-triangle(1.5em, $darkWhite, right);
+                        @include position(absolute, top 50% left -2.8em);
+                        margin-top:-1.5em;
+                    }
+            }
         }
     }
 
      @media #{$large-up} {
-        &:nth-child(-n+4),
-        &:nth-last-child(-n+4) {
+        .alt-grid-item__caption {
+                &:after {
+                    @include css-triangle(1.5em, $darkWhite, right);
+                    @include position(absolute, top 50% left -2.8em);
+                    margin-top:-1.5em;
+                }
+            }
+
+        &:nth-child(-n+3),
+        &:nth-last-child(-n+3) {
             .alt-grid-item__figure {justify-content: flex-end;}
-            .alt-grid-item__caption {right:auto; left:0;}
+            .alt-grid-item__caption {right:auto; left:0;
+                &:after {
+                        @include css-triangle(1.5em, $darkWhite, left);
+                        @include position(absolute, top 50% right -2.8em);
+                        left:auto;
+                        margin-top:-1.5em;
+                        }
+            }
         }
     }
 
@@ -205,6 +255,7 @@
     //  &:nth-child(3n+2) {
     //     .alt-grid-item__caption {
     //         background-color:#dcdcdc;
+            
     //     }
     // }
 

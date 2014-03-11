@@ -1,7 +1,7 @@
 <?php 
   $args = array(
           'post_type' => 'prodotti',
-          'posts_per_page' => 12
+          'posts_per_page' => 9
           );
   $evidenza = new WP_Query( $args ); 
   p2p_type( 'prod_2_brands' )->each_connected( $evidenza, array(), 'brand' );

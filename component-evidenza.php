@@ -7,8 +7,8 @@
   p2p_type( 'prod_2_brands' )->each_connected( $evidenza, array(), 'brand' );
   if ( $evidenza->have_posts() ) {
 ?>
-  <section id="evidenza" class="evidenza">
-    <div class="row">
+  <section id="evidenza" class="evidenza" data-equalizer-watch>
+    <div class="evidenza__container">
       <h2 class="evidenza__title">In vetrina</h2>
       <ul class="evidenza__list">
         <?php 

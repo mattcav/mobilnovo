@@ -75,7 +75,7 @@
                   </li>
                   <li class="negozio">
                     <div class="negozio__inner">
-                      <h3 class="negozio__title">Mobilnovo Centro Fluo</h3>
+                      <h3 class="negozio__title">Mobilnovo Centro Flou</h3>
                       <a class="negozio__link" href="404.html">
                         in Via Anastasio II, 110 (Roma)
                       </a>

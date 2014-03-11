@@ -5,7 +5,32 @@
         // set_post_thumbnail_size(150, 150, false);
         add_image_size('small', 640, 99999);
 
+// magic excerpt
+    function excerpt($limit) {
+      $excerpt = explode(' ', get_the_excerpt(), $limit);
+      if (count($excerpt)>=$limit) {
+        array_pop($excerpt);
+        $excerpt = implode(" ",$excerpt).'...';
+      } else {
+        $excerpt = implode(" ",$excerpt);
+      } 
+      $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+      return $excerpt;
+    }
 
+    function content($limit) {
+      $content = explode(' ', get_the_content(), $limit);
+      if (count($content)>=$limit) {
+        array_pop($content);
+        $content = implode(" ",$content).'...';
+      } else {
+        $content = implode(" ",$content);
+      } 
+      $content = preg_replace('/\[.+\]/','', $content);
+      $content = apply_filters('the_content', $content); 
+      $content = str_replace(']]>', ']]&gt;', $content);
+      return $content;
+    }
 
 // prodotti CPT
     add_action( 'init', 'register_cpt_prodotti' );
@@ -247,7 +272,50 @@ function register_taxonomy_categorie() {
     );
 
     register_taxonomy( 'categorie', array('prodotti'), $args );
+    flush_rewrite_rules();
 }
+
+// colori tax
+add_action( 'init', 'register_taxonomy_colore' );
+
+function register_taxonomy_colore() {
+
+    $labels = array( 
+        'name' => _x( 'colore', 'colore' ),
+        'singular_name' => _x( 'colori', 'colore' ),
+        'search_items' => _x( 'Search colore', 'colore' ),
+        'popular_items' => _x( 'Popular colore', 'colore' ),
+        'all_items' => _x( 'All colore', 'colore' ),
+        'parent_item' => _x( 'Parent colori', 'colore' ),
+        'parent_item_colon' => _x( 'Parent colori:', 'colore' ),
+        'edit_item' => _x( 'Edit colori', 'colore' ),
+        'update_item' => _x( 'Update colori', 'colore' ),
+        'add_new_item' => _x( 'Add New colori', 'colore' ),
+        'new_item_name' => _x( 'New colori', 'colore' ),
+        'separate_items_with_commas' => _x( 'Separate colore with commas', 'colore' ),
+        'add_or_remove_items' => _x( 'Add or remove colore', 'colore' ),
+        'choose_from_most_used' => _x( 'Choose from most used colore', 'colore' ),
+        'menu_name' => _x( 'colore', 'colore' ),
+    );
+
+    $args = array( 
+        'labels' => $labels,
+        'public' => true,
+        'show_in_nav_menus' => true,
+        'show_ui' => true,
+        'show_tagcloud' => true,
+        'show_admin_column' => false,
+        'hierarchical' => false,
+
+        'rewrite' => true,
+        'query_var' => true
+    );
+
+    register_taxonomy( 'colore', array('prodotti'), $args );
+    flush_rewrite_rules();
+}
+
+
 
 // Dimensioni CMB
 

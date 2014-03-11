@@ -41,6 +41,9 @@ module.exports = function(grunt) {
             'bower_components/enquire/dist/enquire.js',
             'bower_components/foundation/js/foundation.min.js',
             'bower_components/foundation/js/foundation/foundation-interchange.js',
+            'bower_components/foundation/js/foundation/foundation-abide.js',
+            'bower_components/foundation/js/foundation/foundation-equalizer.js',
+            'bower_components/imagesloaded/imagesloaded.js',
             'bower_components/isotope/isotope_beta.js',
             'bower_components/verge/verge.js', 
             'js/app.js'
