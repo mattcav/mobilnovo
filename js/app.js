@@ -88,3 +88,8 @@ $(document).ready(function() {
       });
     
 
+$('.open-clearing').on('click', function(e) {
+    e.preventDefault();
+    $('[data-clearing] li img').eq($(this).data('thumb-index')).trigger('click');
+  });
+

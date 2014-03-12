@@ -28,29 +28,6 @@
         </header>
 
 
-        <!-- Off Canvas Menu -->
-        <aside class="menu right-off-canvas-menu" > 
-          <nav class="offcanvas-nav" role="navigation">
-            <ul class="menu__list off-canvas-list"> 
-              <li class="menu__item"><a class="menu__link move-left" href="404.html">Chi siamo</a></li> 
-              <li class="menu__item"><a class="menu__link move-left" href="404.html">Servizi</a></li> 
-              <li class="menu__item"><a class="menu__link move-left" href="404.html">Prodotti</a></li>
-              <li class="menu__item"><a class="menu__link move-left" href="<?php bloginfo('url'); ?>/brand/">Brand</a></li>  
-              <li class="menu__item"><a class="menu__link move-left" href="404.html">Promozioni</a></li> 
-            </ul>
-          </nav> 
-
-          <form method="get" class="searchform" id="searchform" action="<?php echo home_url('/'); ?>">
-            <div class="searchform__inner">
-            <h2 class="searchform__title">Cerca nel sito</h2>
-              <div class="newsletter__input">
-                <input type="search" value="" name="s" id="s" placeholder="scrivi qui per cercare">
-              </div>
-              <div class="searchform__button">
-                <button class="postfix">Go</button>
-              </div>
-            </div>
-          </form>
-        </aside>
+       <?php get_sidebar(); ?>
         
         <main role="main" id="main">

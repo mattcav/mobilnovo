@@ -3,8 +3,7 @@
    <div class="row">
     <div class="results" id="results">
     
-        <h2 class="results__title">Risultati per: <span class="result__key"><?php echo get_search_query(); ?></span></h2>
-    
+    <h2 class="results__title">Risultati per: <span class="result__key"><?php echo get_search_query(); ?></span></h2>
         <?php if ( have_posts() ) : ?>
         
             <?php /* Start the Loop */ ?>
@@ -18,7 +17,6 @@
         <?php endif; // end have_posts() check ?>
         
         <?php /* Display navigation to next/previous pages when applicable */ ?>
-
     </div>
    </div>
         

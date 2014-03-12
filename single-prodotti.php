@@ -1,18 +1,69 @@
 <?php get_header(); ?>
-  <?php while (have_posts()) : the_post(); ?>
+  <?php while (have_posts()) : the_post(); 
+        $thumb_ID = get_post_thumbnail_id( $post->ID );
+        $galleryargs = array(
+                      'post_parent' => $post->ID,
+                      'post_type' => 'attachment',
+                      'numberposts' => -1,
+                      'post_mime_type' => 'image',
+                      'order' => 'ASC',
+                      'exclude' => $thumb_ID
+                    );
+        $images = get_posts($galleryargs);
+        $thumb_img = wp_get_attachment_image_src( $thumb_ID, 'thumbnail');
+        $small_img = wp_get_attachment_image_src( $thumb_ID, 'small');
+        $large_img = wp_get_attachment_image_src( $thumb_ID, 'full');
+
+        // promo
+        $promo = get_post_meta($post->ID, '_promo_inpromo', true);  
+        $price = get_post_meta($post->ID, '_promo_price', true); 
+
+       $promozione = get_posts( array(
+        'connected_type' => 'prod_2_promo',
+        'connected_items' => get_queried_object(),
+        'nopaging' => true,
+        'suppress_filters' => false
+      ) );
+  ?>
       <article class="item">
-       
+        
+        <?php if($promozione) :
+          foreach ( $promozione as $post ) : setup_postdata( $post ); ?>
+           <a class="promo-msg" href="<?php the_permalink(); ?>">In promozione</a>
+        <?php endforeach; 
+        wp_reset_postdata(); endif;?>
+             
+
         <figure id="item__figure" class="item__figure">
-        <?php 
-             $small_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small');
-             $large_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
-        ?>
+          <?php if($images) : ?>
+                <a href="#" class="open-clearing gallery__trigger" data-thumb-index="0">
+                  <img class="item__img clearing-thumb" data-interchange="[<?php echo  $small_img[0] ?>, (default)], [<?php echo  $large_img[0] ?>, (medium)]" alt="<?php the_title(); ?>"> 
+                  <noscript><img src="<?php echo  $large_img[0] ?>" alt="copertina"></noscript>
+                    <span class="gallery__message">guarda la gallery</span>
+                </a>
+          <?php else : ?>      
+              <img class="item__img clearing-thumb" data-interchange="[<?php echo  $small_img[0] ?>, (default)], [<?php echo  $large_img[0] ?>, (medium)]" alt="<?php the_title(); ?>"> 
+              <noscript><img src="<?php echo  $large_img[0] ?>" alt="copertina"></noscript>
+          <?php endif; ?>    
+          </figure>
 
-          <img class="item__img" data-interchange="[<?php echo  $small_img[0] ?>, (default)], [<?php echo  $large_img[0] ?>, (medium)]" alt="<?php the_title(); ?>"> 
+          <?php            
+            if ( $images) :
+              echo '<ul class="clearing-thumbs" data-clearing>';
+              echo '<li><a href="'.$large_img[0].'"><img src="'.$thumb_img[0].'" alt="gallery-cover"></a></li>';
+                foreach( $images as $image ) :
+                $attachmenturl=wp_get_attachment_url($image->ID);
+                $attachmentthumb=wp_get_attachment_image_src( $image->ID, 'thumbnail' );
+                $attachmentfull=wp_get_attachment_image_src( $image->ID, 'full' );
 
-          <noscript><img src="<?php echo  $large_img[0] ?>" alt="copertina"></noscript>
-
-        </figure>
+                echo '<li><a href="'.$attachmentfull[0].'">';
+                  echo '<img src="'.$attachmentthumb[0].'" alt="gallery img">';
+                echo '</a></li>';
+              endforeach;
+              echo '</ul>';
+            endif;
+          ?>
+          
 
         <div class="item__inner item__column-container" data-equalizer>
           <section id="item__content" class="item__content item__column" data-equalizer-watch>
@@ -28,13 +79,17 @@
                 <?php the_title(); ?>
               </h1>
               <p class="item__text item__details">
-                <?php $term =""; if( has_term( $term, 'materiali' ) ) : ?>
+                <?php $term =""; if( has_term( $term, 'materiali' ) ) : 
+                  $get_materiali = get_the_terms( $post->ID, 'materiali' );
+                  $elenco_materiali = array();
+                  foreach ( $get_materiali as $materiale ) {
+                    $elenco_materiali[] = $materiale->name;
+                  }
+                  
+                  $materiali = join( ", ", $elenco_materiali );
+                ?>
                   <strong>Materiale:</strong> 
-                    <em><?php
-                          echo get_the_term_list( $post->ID, 'materiali',
-                          '', ', ', '' );
-                        ?>
-                    </em>
+                    <?php echo $materiali; ?>
                   <br>
                 <?php endif; ?>
                 
@@ -57,6 +112,16 @@
               <p class="item__desc item__text">
                 <?php echo get_the_content(); ?> 
               </p>
+
+              <?php 
+              $promo = get_post_meta($post->ID, '_promo_inpromo', true);  
+
+              if($promo && $price) : ?>
+                <div class="price">
+                  <p class="price__label">Prezzo speciale:</p>
+                  <span class="price__value">€ <?php echo $price; ?></span>
+                </div>
+              <?php endif; ?>  
 
               <a href="#" data-reveal-id="contact" data-reveal class="button item__action">
                 richiedi informazioni
@@ -146,6 +211,7 @@
           <small class="contact__notes">I campi contrassegnati con (*) sono obbligatori.</small>
         </form>
       </div>
+
 
   <?php endwhile; // End the loop ?>
 <?php get_footer(); ?>

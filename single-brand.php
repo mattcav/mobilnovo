@@ -36,7 +36,7 @@
           <div id="filters" class="indice__filters">
           <label for="filter">filtra per categorie:</label>
            <select name="filter" id="filter" class="filter option-set" data-filter-group="categorie">
-                 <option data-filter-value="" selected="selected">Tutti i prodotti</option>
+                 <option data-filter-value="" selected="selected">Tutti i prodotti di <?php echo $brand_title; ?></option>
                   <?php 
                     foreach ( $categories as $term ) {
                       $cat = get_term_by( 'slug', $term, 'categorie' );

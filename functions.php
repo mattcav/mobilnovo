@@ -4,7 +4,11 @@
         add_theme_support('post-thumbnails');
         // set_post_thumbnail_size(150, 150, false);
         add_image_size('small', 640, 99999);
-
+// menus
+        add_theme_support('menus');
+        register_nav_menus(array(
+            'primary' => __('Primary Navigation', 'mobilnovo') 
+        ));
 // magic excerpt
     function excerpt($limit) {
       $excerpt = explode(' ', get_the_excerpt(), $limit);
@@ -31,7 +35,42 @@
       $content = str_replace(']]>', ']]&gt;', $content);
       return $content;
     }
+// menu walkers
+    class offcanvasWalker extends Walker_Nav_Menu
+    {
+      function start_el(&$output, $item, $depth, $args)
+      {
+           global $wp_query;
+           $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
+           $class_names = $value = '';
+
+           $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+           $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+           $class_names = ' class="menu__item '. esc_attr( $class_names ) . '"';
+
+           $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+           $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+           $attributes .= ' class="menu-item__link move-left"';
+           $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+           $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+           $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+           $prepend = '';
+           $append = '';
+           
+
+            $item_output = $args->before;
+            $item_output .= '<a'. $attributes .'>';
+            $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
+            $item_output .= '</a>';
+            $item_output .= $args->after;
+
+            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+            }
+    }
 // prodotti CPT
     add_action( 'init', 'register_cpt_prodotti' );
     function register_cpt_prodotti() {
@@ -91,7 +130,7 @@
             'labels' => $labels,
             'hierarchical' => false,
             'description' => 'Le promozioni di Mobilnovo',
-            'supports' => array( 'title', 'editor', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
             'public' => true,
             'show_ui' => true,
             'show_in_menu' => true,
@@ -342,6 +381,35 @@ function dimensioni_metabox( $meta_boxes ) {
 }
 add_filter( 'cmb_meta_boxes', 'dimensioni_metabox' );
 
+function promozione_metabox( $meta_boxes ) {
+    $prefix = '_promo_'; // Prefix for all fields
+    $meta_boxes['promobox'] = array(
+        'id' => 'promobox',
+        'title' => 'Articolo in promozione',
+        'pages' => array('prodotti'), // post type
+        'context' => 'normal',
+        'priority' => 'high',
+        'show_names' => true, // Show field names on the left
+        'fields' => array(
+            array(
+                'name' => 'Prezzo',
+                'desc' => 'senza segno € - ad esempio: 500,00',
+                'id' => $prefix . 'price',
+                'type' => 'text'
+            ),
+             array(
+                'name' => 'In promozione?',
+                'desc' => 'Spunta se è un articolo in promozione',
+                'id' => $prefix . 'inpromo',
+                'type' => 'checkbox'
+            ),
+        ),
+    );
+
+    return $meta_boxes;
+}
+add_filter( 'cmb_meta_boxes', 'promozione_metabox' );
+
 // Initialize the metabox class
 add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
 function be_initialize_cmb_meta_boxes() {
@@ -378,6 +446,21 @@ function designers_connection_types() {
     ) );
 }
 add_action( 'p2p_init', 'designers_connection_types' );
+
+function promozioni_connection_types() {
+   p2p_register_connection_type( array(
+        'name' => 'prod_2_promo',
+        'from' => 'prodotti',
+        'to' => 'promozione',
+        'reciprocal' => true,
+        'admin_box' => array(
+            'show' => 'any',
+            'context' => 'advanced'
+          )
+    ) );
+}
+add_action( 'p2p_init', 'promozioni_connection_types' );
+
 
 // end functions.php
 ?>
