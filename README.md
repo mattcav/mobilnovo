@@ -2,4 +2,5 @@
 mobilnovo
 =========
 
-mobilnovo prototype
+mobilnovo wordpress theme
+http://disegnatoperte.com/mobilnovo/
