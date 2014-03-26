@@ -1,9 +1,12 @@
 <?php get_header(); ?>
-<?php if ( have_posts() ) : ?>
-    <div id="container" class="indice">
+<?php
+    query_posts($query_string.'&posts_per_page=-1&orderby=title&order=ASC');
+    if ( have_posts() ) : ?>
+    <div id="container" class="indice indice--brand">
         <article class="indice__container masonry">
             <h1 class="indice__title">
-                <?php post_type_archive_title(); ?>
+                <?php //post_type_archive_title(); ?>
+                Marchi
             </h1>
             <p class="indice__text">
                 Per garantire sempre prodotti e soluzioni di assoluta eccellenza, distinzione ed innovazione, siamo da sempre in contatto con le migliori aziende produttrici del settore.

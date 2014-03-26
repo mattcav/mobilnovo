@@ -175,35 +175,7 @@
           align-items:center;
           justify-content: center;
           text-align:center;
+          padding:0 2rem;
         }
     }
-}
-
-.entry {
-    @include grid-column(
-        $columns:12,
-        $center:true
-        );
-    margin-top:2rem;
-    margin-bottom:3rem;
-    max-width:$cage;
-    @media #{$medium-up} {
-        max-width:$cage-large;
-    }
-    overflow: hidden;
-}
-.entry__title {
-    font-size:rem-calc(27);
-    @media #{$medium-up} {
-        font-size:rem-calc(37);
-    }
-}
-.entry__text p {
-    @media #{$medium-up} {
-        font-size:rem-calc(18);
-    }
-}
-
-.entry img {
-    margin-bottom:1rem;
 }

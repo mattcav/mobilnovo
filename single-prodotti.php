@@ -1,5 +1,8 @@
 <?php get_header(); ?>
-  <?php while (have_posts()) : the_post(); 
+  <?php 
+        //main loop 
+        while (have_posts()) : the_post(); 
+        
         $thumb_ID = get_post_thumbnail_id( $post->ID );
         $galleryargs = array(
                       'post_parent' => $post->ID,
@@ -101,8 +104,14 @@
                  <?php if( has_term( $term, 'colore' ) ) : ?>
                   <strong>Varianti colore:</strong> 
                     <em><?php
-                          echo get_the_term_list( $post->ID, 'colore',
-                          '', ', ', '' );
+                          $get_colori = get_the_terms( $post->ID, 'colore' );
+                          $elenco_colori = array();
+                          foreach ( $get_colori as $colore ) {
+                            $elenco_colori[] = $colore->name;
+                          }
+                          
+                          $colore = join( ", ", $elenco_colori );
+                          echo $colore;
                         ?>
                     </em>
                 <?php endif; ?>

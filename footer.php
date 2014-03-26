@@ -7,10 +7,13 @@
 
                 <p class="blurb__text">Nel tempo l'azienda si è affermata nel panorama nazionale e internazionale come una realtà di riferimento nel settore del design e dell'arredamento contemporaneo.</p>
               
+                <a href="mailto:info@mobilnovo.it" class="blurb__feature">info@mobilnovo.it</a>
+                <p class="blurb__feature blurb--phone">tel +39 06 6381104</p>
+
 
               <form class="newsletter"> 
                 <h2 class="newsletter__title">Newsletter</h2>
-                <p class="newsletter__text">Sign up to the newsletter and be the first to know our offers!</p>
+                <p class="newsletter__text">Iscriviti e rimani aggiornato sulle offerte di mobilnovo.</p>
                 <div class="newsletter__inner">
                   <div class="newsletter__input">
                     <input type="email" placeholder="esempio@email.com">
@@ -115,7 +118,7 @@
           <footer id="content-info" class="contentinfo">
             <div class="row">
               <div class="contentinfo__inner">
-                <small>Mobilnovo srl &ndash; P.I. 00917721003 &mdash; Copyright © 2014 &mdash; Tutti i diritti riservati  <a class="contentinfo__link" href="404.html">impressum</a>&nbsp;<a class="contentinfo__link" href="404.html">privacy</a> | <a href="mailto:info@mobilnovo.it" class="contentinfo__link">info@mobilnovo.it</a> - 06 123456</small>
+                <small>Mobilnovo srl &ndash; P.I. 00917721003 &mdash; Copyright © 2014 &mdash; Tutti i diritti riservati  <a class="contentinfo__link" href="404.html">impressum</a>&nbsp;<a class="contentinfo__link" href="404.html">privacy</a> | <a href="mailto:info@mobilnovo.it" class="contentinfo__link">info@mobilnovo.it</a> -  +39 06 6381104 </small>
               </div>
             </div>
           </footer>

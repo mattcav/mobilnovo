@@ -410,6 +410,30 @@ function promozione_metabox( $meta_boxes ) {
 }
 add_filter( 'cmb_meta_boxes', 'promozione_metabox' );
 
+
+function isHome_metabox( $meta_boxes ) {
+    $prefix = '_mobil_'; // Prefix for all fields
+    $meta_boxes['isHome'] = array(
+        'id' => 'isHome',
+        'title' => 'Homepage',
+        'pages' => array('prodotti'), // post type
+        'context' => 'normal',
+        'priority' => 'high',
+        'show_names' => true, // Show field names on the left
+        'fields' => array(
+            array(
+                'name' => 'Homepage',
+                'desc' => 'Spunta se è un prodotto visualizzato in homepage',
+                'id' => $prefix . 'isHome',
+                'type' => 'checkbox'
+            ),
+        ),
+    );
+
+    return $meta_boxes;
+}
+add_filter( 'cmb_meta_boxes', 'isHome_metabox' );
+
 // Initialize the metabox class
 add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
 function be_initialize_cmb_meta_boxes() {

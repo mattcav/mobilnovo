@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-<?php if ( have_posts() ) : ?>
+<?php
+    query_posts($query_string.'&posts_per_page=-1&orderby=title&order=ASC');
+    if ( have_posts() ) : ?>
     <div id="container" class="indice">
         <article class="indice__container masonry">
             <h1 class="indice__title">

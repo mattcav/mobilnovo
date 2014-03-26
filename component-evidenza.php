@@ -1,7 +1,8 @@
 <?php 
   $args = array(
           'post_type' => 'prodotti',
-          'posts_per_page' => 12
+          'posts_per_page' => 9,
+          'meta_key' => '_mobil_isHome'
           );
   $evidenza = new WP_Query( $args ); 
   p2p_type( 'prod_2_brands' )->each_connected( $evidenza, array(), 'brand' );
