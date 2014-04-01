@@ -5,6 +5,7 @@
     $terms = get_terms("categorie");
 
     $product = new WP_Query( array(
+      'posts_per_page' => -1,
       'connected_type' => 'prod_2_desi',
       'connected_items' => get_queried_object(),
       'nopaging' => true

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : 
+    query_posts($query_string.'&posts_per_page=-1');
+
     $tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
     $archive_title = $tax->name;
 
@@ -43,9 +45,11 @@
                          }   
                 wp_reset_postdata();                 
                          ?>">
+
             <h1 class="indice__title">
                 <?php echo $archive_title; ?>
             </h1>
+
             <div id="filters" class="indice__filters">
               <label for="filter">filtra per brand:</label>
                <select name="filter" id="filter_brand" class="filter option-set" data-filter-group="brand">

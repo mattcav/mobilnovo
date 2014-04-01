@@ -15,11 +15,11 @@
   <form method="get" class="searchform" id="searchform" action="<?php echo home_url('/'); ?>">
     <div class="searchform__inner">
     <h2 class="searchform__title">Cerca nel sito</h2>
-      <div class="newsletter__input">
+      <div class="newsletter__input searchform--input">
         <input type="search" value="" name="s" id="s" placeholder="scrivi qui per cercare">
       </div>
-      <div class="searchform__button">
-        <button class="postfix">Go</button>
+      <div class="newsletter__button searchform--button">
+        <button class="postfix searchform-go">Go</button>
       </div>
     </div>
   </form>

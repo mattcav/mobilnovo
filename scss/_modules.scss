@@ -514,13 +514,16 @@
     font-weight: 400;
     font-size:rem-calc(18);
 }
-.searchform__input {
-    @extend .newsletter__input;
+.searchform--input {
+    width:75%;
 }
-.searchform__button {
-    @extend .newsletter__button;
+.searchform--button {
+    width:25%;
 }
-
+.searchform-go {
+    border-width:0px;
+    padding:0 1rem;
+}
 .menu-icon__label {
     font-family: $header-font-family;
     display:none !important;
@@ -566,6 +569,7 @@
     position:relative;
     @media #{$large-up} {
         margin:4rem 0 0 0;
+        max-height:32em;
         @include grid-column(
             $columns:5
             );
@@ -1071,6 +1075,7 @@
 .categorie-archive__link {
     text-align: center;
     display:block;
+    margin:0 auto;
     padding:40% 0;
     background:$darkGrey;
     max-width: 16rem;
