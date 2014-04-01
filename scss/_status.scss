@@ -37,16 +37,6 @@ a {
 }
 
 
-body {
-      transition:$transition;
-      opacity:0;  
-    }
-
-.ready {
-    body {
-        opacity:1;
-    }
-}    
 
 .js {
       @media #{$landscape} {

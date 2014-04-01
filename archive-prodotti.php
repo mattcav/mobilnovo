@@ -1,7 +1,10 @@
 <?php get_header(); ?>
 <div class="row archive-prodotti">
  <?php 
-    $args = array( 'hide_empty=0' );
+    $args = array( 
+        'hide_empty'=>'0',
+        // 'exclude'=> array(91, 92, 93) 
+        );
     $terms = get_terms('categorie', $args);
 
     $count = count($terms); $i=0;

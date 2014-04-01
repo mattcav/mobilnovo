@@ -37,6 +37,12 @@ if( ! function_exists( 'mobil_pagination' ) ) {
         register_nav_menus(array(
             'primary' => __('Primary Navigation', 'mobilnovo') 
         ));
+
+// excerpts to pages
+add_action( 'init', 'mmobil_add_excerpts_to_pages' );
+    function mmobil_add_excerpts_to_pages() {
+        add_post_type_support( 'page', 'excerpt' );
+   }        
 // magic excerpt
     function excerpt($limit) {
       $excerpt = explode(' ', get_the_excerpt(), $limit);

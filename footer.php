@@ -28,86 +28,26 @@
              <div class="negozi">
               <h2 class="footer__title negozi--title">Punti Vendita</h2>
                 <ul class="negozi__list">
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Mobilnovo</h3>
-                      <a class="negozio__link" href="404.html">
-                        in Via Anastasio II, 103 (Roma)
-                      </a>
-                    </div>
-                  </li>
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Mobilnovo</h3>
-                      <a class="negozio__link" href="404.html">
-                        in Via Sicilia, 267 (Roma)
-                      </a>
-                    </div>
-                  </li>
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Mobilnovo Centro cucine</h3>
-                      <a class="negozio__link" href="404.html">
-                        in Via Anastasio II, 113 (Roma)
-                      </a>
-                    </div>
-                  </li>
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Mobilnovo Office</h3>
-                      <a class="negozio__link" href="404.html">
-                        in Via Anastasio II, 113 (Roma)
-                      </a>
-                    </div>
-                  </li>
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Mobilnovo Now</h3>
-                      <a class="negozio__link" href="404.html">
-                        in G. Ferrari, 7 (Roma)
-                      </a>
-                    </div>
-                  </li>
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Angolo In</h3>
-                      <a class="negozio__link" href="404.html">
-                        Via Gregorio VII, 229 (Roma)
-                      </a>
-                    </div>
-                  </li>
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Mobilnovo Centro Flou</h3>
-                      <a class="negozio__link" href="404.html">
-                        in Via Anastasio II, 110 (Roma)
-                      </a>
-                    </div>
-                  </li>
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Mobilnovo Centro cucine</h3>
-                      <a class="negozio__link" href="404.html">
-                        in Via Anastasio II, 113 (Roma)
-                      </a>
-                    </div>
-                  </li>
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Centro Cucine Modulnova</h3>
-                      <a class="negozio__link" href="404.html">
-                        in Via Anastasio II, 113 (Roma)
-                      </a>
-                    </div>
-                  </li>
-                  <li class="negozio">
-                    <div class="negozio__inner">
-                      <h3 class="negozio__title">Centro Venta Cucina</h3>
-                      <a class="negozio__link" href="404.html">
-                        in Via Anastasio II, 113 (Roma)
-                      </a>
-                    </div>
-                  </li>
+                 <?php
+                      $args = array(
+                                  'child_of' => 36,
+                                  'sort_order' => 'DESC',
+                                  'sort_column' => 'post_date'
+                              );
+                      $negozi = get_pages( $args );
+                      foreach( $negozi as $negozio ) {    
+                        $name = $negozio->post_title;
+                        $address = $negozio->post_excerpt;
+                        $link = get_page_link( $negozio->ID ); ?>
+                         <li class="negozio">
+                          <div class="negozio__inner">
+                            <h3 class="negozio__title"><?php echo $name; ?></h3>
+                            <a class="negozio__link" href="<?php echo $link; ?>">
+                              <?php echo $address; ?>
+                            </a>
+                          </div>
+                        </li>
+                      <?php } ?>
                 </ul>
               </div>
 
@@ -131,7 +71,7 @@
     </div><!-- offcanvas wrap--> 
 
         
-  <script src="<?php bloginfo('template_directory'); ?>/js/build/app.js"></script> -->
+  <script src="<?php bloginfo('template_directory'); ?>/js/build/app.js"></script>
   <?php wp_footer(); ?>
   </body>
 </html>
