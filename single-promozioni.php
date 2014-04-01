@@ -44,7 +44,7 @@
           <?php endwhile; ?>    
         <?php wp_reset_postdata(); 
         else :
-           get_template_part('component', 'noproducts');
+           //get_template_part('component', 'noproducts');
         endif; ?>
  </div>
 

@@ -58,7 +58,7 @@
           <footer id="content-info" class="contentinfo">
             <div class="row">
               <div class="contentinfo__inner">
-                <small>Mobilnovo srl &ndash; P.I. 00917721003 &mdash; Copyright © 2014 &mdash; Tutti i diritti riservati  <a class="contentinfo__link" href="404.html">impressum</a>&nbsp;<a class="contentinfo__link" href="404.html">privacy</a> | <a href="mailto:info@mobilnovo.it" class="contentinfo__link">info@mobilnovo.it</a> -  +39 06 6381104 </small>
+                <small>Mobilnovo srl &ndash; P.I. 00917721003 &mdash; Copyright © 2014 &mdash; Tutti i diritti riservati  <a class="contentinfo__link" href="<?php bloginfo('url');?>/impressum/">impressum</a>&nbsp;<a class="contentinfo__link" href="<?php bloginfo('url');?>/privacy/">privacy</a> | <a href="mailto:info@mobilnovo.it" class="contentinfo__link">info@mobilnovo.it</a> -  +39 06 6381104 </small>
               </div>
             </div>
           </footer>

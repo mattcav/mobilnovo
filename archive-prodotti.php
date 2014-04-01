@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <div class="row archive-prodotti">
+    <h2 class="promozioni__title">Prodotti</h2>
+
  <?php 
     $args = array( 
         'hide_empty'=>'0',

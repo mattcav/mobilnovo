@@ -135,6 +135,8 @@
     @extend %vertical-rythm;
     background: $lightGrey;
     text-align: center;
+    padding:2em 0;
+    overflow: hidden;
     @media #{$large-up} {
         margin-top:0;
         @include grid-column(
