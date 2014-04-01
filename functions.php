@@ -1,4 +1,32 @@
 <?php 
+// pagination 
+if( ! function_exists( 'mobil_pagination' ) ) {
+    function mobil_pagination() {
+        global $wp_query;
+     
+        $big = 999999999; // This needs to be an unlikely integer
+     
+        // For more options and info view the docs for paginate_links()
+        // http://codex.wordpress.org/Function_Reference/paginate_links
+        $paginate_links = paginate_links( array(
+            'base' => str_replace( $big, '%#%', get_pagenum_link($big) ),
+            'current' => max( 1, get_query_var('paged') ),
+            'total' => $wp_query->max_num_pages,
+            'mid_size' => 5,
+            'prev_next' => True,
+            'prev_text' => __('&laquo;'),
+            'next_text' => __('&raquo;'),
+            'type' => 'list'
+        ) );
+     
+        // Display the pagination if more than one page is found
+        if ( $paginate_links ) {
+            echo '<div class="pagination clearfix">';
+            echo $paginate_links;
+            echo '</div><!--// end .pagination -->';
+        }
+    }
+};
 
 // Add post thumbnail supports. 
         add_theme_support('post-thumbnails');
@@ -35,6 +63,7 @@
       $content = str_replace(']]>', ']]&gt;', $content);
       return $content;
     }
+
 // menu walkers
     class offcanvasWalker extends Walker_Nav_Menu
     {
@@ -110,21 +139,21 @@
     } 
 
     // Promozioni CPT
-    add_action( 'init', 'register_cpt_promozione' );
-    function register_cpt_promozione() {
+    add_action( 'init', 'register_cpt_promozioni' );
+    function register_cpt_promozioni() {
         $labels = array(
-            'name' => _x( 'Promozioni', 'promozione' ),
-            'singular_name' => _x( 'Promozione', 'promozione' ),
-            'add_new' => _x( 'Add New', 'promozione' ),
-            'add_new_item' => _x( 'Add New Promozione', 'promozione' ),
-            'edit_item' => _x( 'Edit Promozione', 'promozione' ),
-            'new_item' => _x( 'New Promozione', 'promozione' ),
-            'view_item' => _x( 'View Promozione', 'promozione' ),
-            'search_items' => _x( 'Search Promozioni', 'promozione' ),
-            'not_found' => _x( 'No promozioni found', 'promozione' ),
-            'not_found_in_trash' => _x( 'No promozioni found in Trash', 'promozione' ),
-            'parent_item_colon' => _x( 'Parent Promozione:', 'promozione' ),
-            'menu_name' => _x( 'Promozioni', 'promozione' ),
+            'name' => _x( 'Promozioni', 'promozioni' ),
+            'singular_name' => _x( 'Promozione', 'promozioni' ),
+            'add_new' => _x( 'Add New', 'promozioni' ),
+            'add_new_item' => _x( 'Add New Promozione', 'promozioni' ),
+            'edit_item' => _x( 'Edit Promozione', 'promozioni' ),
+            'new_item' => _x( 'New Promozione', 'promozioni' ),
+            'view_item' => _x( 'View Promozione', 'promozioni' ),
+            'search_items' => _x( 'Search Promozioni', 'promozioni' ),
+            'not_found' => _x( 'No promozioni found', 'promozioni' ),
+            'not_found_in_trash' => _x( 'No promozioni found in Trash', 'promozioni' ),
+            'parent_item_colon' => _x( 'Parent Promozione:', 'promozioni' ),
+            'menu_name' => _x( 'Promozioni', 'promozioni' ),
         );
         $args = array(
             'labels' => $labels,
@@ -143,7 +172,7 @@
             'rewrite' => true,
             'capability_type' => 'post'
         );
-        register_post_type( 'promozione', $args );
+        register_post_type( 'promozioni', $args );
         flush_rewrite_rules();
     } 
 
@@ -475,7 +504,7 @@ function promozioni_connection_types() {
    p2p_register_connection_type( array(
         'name' => 'prod_2_promo',
         'from' => 'prodotti',
-        'to' => 'promozione',
+        'to' => 'promozioni',
         'reciprocal' => true,
         'admin_box' => array(
             'show' => 'any',

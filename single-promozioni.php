@@ -7,7 +7,7 @@
       'connected_items' => get_queried_object(),
       'nopaging' => true
     ) );  ?>
-<div id="container" class="indice">
+<div  class="indice">
 
     <article class="indice__container promo--container promo masonry">
           <div class="promo__inner">

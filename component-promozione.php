@@ -2,8 +2,8 @@
 <h2 class="promozione__heading">Promozione in corso</h2>
 <?php
     $args = array(
-            'post_type' => 'promozione',
-            'posts_per_page'=> '-1'
+            'post_type' => 'promozioni',
+            'posts_per_page'=> '1'
             );
     $promozione_query = new WP_Query( $args );
 

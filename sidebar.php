@@ -19,7 +19,7 @@
         <input type="search" value="" name="s" id="s" placeholder="scrivi qui per cercare">
       </div>
       <div class="newsletter__button searchform--button">
-        <button class="postfix searchform-go">Go</button>
+        <button class="postfix searchform-go" type="submit">Go</button>
       </div>
     </div>
   </form>

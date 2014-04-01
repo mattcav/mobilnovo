@@ -1,19 +1,25 @@
 <?php get_header(); ?>
-
-   <div class="row">
-    <div class="results" id="results">
+    <div class="results promozioni--index" id="promozioni-index">
     
-    <h2 class="results__title">Risultati per: <span class="result__key"><?php echo get_search_query(); ?></span></h2>
+    <h2 class="promozioni__title">Promozioni</h2>
         <?php if ( have_posts() ) : ?>
         
             <?php /* Start the Loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
-                <?php get_template_part( 'component', 'result' ); ?>
+                <article class="promozione promozione--archive-item">
+                    <div class="promozione__inner promozione--archive-inner">
+                        <h1 class="promozione__title"><?php the_title(); ?></h1>
+                        <p class="promozione__text"><?php the_excerpt_rss(); ?></p>
+                        <a class="button small promozione__link" href="<?php the_permalink(); ?>">Scopri di più</a>
+                    </div>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php echo get_the_post_thumbnail($post->ID, 'medium', array('class' => 'promozione__img promozione--archive-img')); ?>
+                    </a>
+                </article>
             <?php endwhile; ?>
             
             <?php else : ?>
                 <?php get_template_part( 'component', 'none' ); ?>
-            
         <?php endif; // end have_posts() check ?>
         
         <?php /* Display navigation to next/previous pages when applicable */ ?>
@@ -24,6 +30,4 @@
             </nav>
         <?php } ?>
     </div>
-   </div>
-        
 <?php get_footer(); ?>
