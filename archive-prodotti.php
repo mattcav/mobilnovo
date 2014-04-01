@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="row prodotti">
+<div class="row archive-prodotti">
  <?php 
      $args = array( 'hide_empty=0' );
 

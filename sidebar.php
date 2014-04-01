@@ -7,7 +7,7 @@
             'container' => false,
             'depth' => 0,
             'items_wrap' => '<ul class="menu__list off-canvas-list">%3$s</ul>',
-            'walker'          => new offcanvasWalker()
+            'walker'  => new offcanvasWalker()
         ) );
     ?>  
   </nav> 

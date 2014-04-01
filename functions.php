@@ -53,7 +53,7 @@
            $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
 
            $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-           $attributes .= ' class="menu-item__link move-left"';
+           $attributes .= ' class="menu-item__link hover-move-left"';
            $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
            $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
            $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';

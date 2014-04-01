@@ -4,7 +4,7 @@ a {
     transition:$transition;
 }   
 
-.move-left {
+.hover-move-left {
     transition:$transition;
     &:hover {
         transform: translateX(0.5rem);

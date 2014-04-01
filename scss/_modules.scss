@@ -1063,7 +1063,7 @@
     }
      @media #{$large-up} {
         @include block-grid(
-        $per-row:4
+        $per-row:6
         );
     }
 }
@@ -1074,7 +1074,6 @@
     padding:40% 0;
     background:$darkGrey;
     max-width: 16rem;
-    margin:0 auto;
     &:hover {
         background:$red;
     }

@@ -2,13 +2,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    connect: {
-      server: {
-        options: {
-          port: 9001,
-        }
-      }
-    },
 
     sass: {
       options: {
@@ -80,13 +73,12 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('build', ['connect','sass', 'autoprefixer', 'concat', 'uglify']);
+  grunt.registerTask('build', ['sass', 'autoprefixer', 'concat', 'uglify']);
   grunt.registerTask('default', ['build','watch']);
 }

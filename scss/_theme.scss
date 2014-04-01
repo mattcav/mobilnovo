@@ -34,3 +34,11 @@
         }
     }
 }
+
+.archive-prodotti {
+    @media #{$large-up} {
+        margin: 2rem 0;
+        padding:0 2rem;
+        max-width:100%;
+    }
+}
